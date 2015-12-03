@@ -1,0 +1,6 @@
+clone - clones the repo to computer
+add - moves file to staging area
+
+
+
+lolololo bogus
