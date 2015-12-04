@@ -2,4 +2,4 @@ clone - clones the repo to computer
 add - moves file to staging area
 
 
-
+Use "git checkout SHA" instead of "git reset HEAD"
