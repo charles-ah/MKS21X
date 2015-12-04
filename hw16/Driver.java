@@ -1,0 +1,35 @@
+public class Driver
+{
+
+    public static void main(String[] args)
+    {
+	int[] arrayName = { 8, 6, 7, 5, 3, 0, 9};
+	Sorts.printArray(arrayName);
+	Sorts.insertionSort(arrayName);
+	Sorts.printArray(arrayName);
+	
+	int[] arrayName2 = {1,1,1};
+        Sorts.printArray(arrayName2);
+        Sorts.insertionSort(arrayName2);
+        Sorts.printArray(arrayName2);
+
+	int[] arrayName3 = {1};
+        Sorts.printArray(arrayName3);
+        Sorts.insertionSort(arrayName3);
+        Sorts.printArray(arrayName3);
+
+	int[] arrayName4 = { -1,-5,9};
+        Sorts.printArray(arrayName4);
+        Sorts.insertionSort(arrayName4);
+        Sorts.printArray(arrayName4);
+	
+	int[] arrayName5 = {};
+	System.out.println(arrayName5.length);
+        Sorts.printArray(arrayName5);
+        Sorts.insertionSort(arrayName5);
+        Sorts.printArray(arrayName5);
+
+    }
+
+
+}

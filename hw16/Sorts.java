@@ -1,0 +1,54 @@
+public class Sorts
+{
+
+    public static void printArray(int[]data)
+    {
+	String strArray = "";
+	for (int i = 0;i < data.length-1;i++)
+	    {
+		strArray+=data[i] + ",";
+	    }
+	System.out.println( "["+strArray+data[data.length-1]+"]");
+    }
+
+    public static void insertionSort(int[]data)
+    {
+
+	boolean sorted = false;
+	if (data.length <= 1)
+	    {
+		sorted = true;
+	    }
+
+	while (!sorted)
+	    {
+		for (int j = 0;j<data.length-1;j++)
+		    {
+			if (data[j] > data[j+1])
+			    {
+				int old = data[j];
+				int newV = data[j+1];
+				data[j] = newV;
+				data[j+1] = old;
+			    }
+		    }
+		for (int j = 0;j<data.length-1;j++)
+                    {
+			if (data[j] > data[j+1])
+			    {
+				sorted = false;
+				j = data.length;
+			    }
+			else
+			    {
+				sorted = true;
+			    }
+                    }
+            }
+
+	
+    }
+
+
+
+}

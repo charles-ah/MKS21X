@@ -1,0 +1,45 @@
+import java.util.Scanner;
+import java.io.*;
+
+
+public class PigLatin{
+
+
+    public static void main(String[] args)
+    {
+	try{
+	Scanner in = new Scanner(new File("story.txt"));
+	while (in.hasNextLine())
+	    {   Scanner line =new Scanner( in.nextLine());
+		while((line.hasNext()))
+		    {
+			System.out.print(makePigLatin(line.next())+" ");
+		    }
+	
+       			System.out.print("\n");;
+	    }
+
+	}catch(FileNotFoundException e)
+	    {
+		System.out.println("No file");
+	    }	
+
+
+    }
+
+    public static String makePigLatin(String s)
+    {
+	String[] sArray = s.split("");
+	int i = 1;
+	while(i < sArray.length)
+	    {
+		if (sArray[i].equalsIgnoreCase("a") || sArray[i].equalsIgnoreCase("i") || sArray[i].equalsIgnoreCase("o") || sArray[i].equalsIgnoreCase("u") || sArray[i].equalsIgnoreCase("e"))
+		    {
+			return s.substring(i-1) + s.substring(0,i-1) + "ay";
+		    }
+		i++;
+	    }
+	return s + "ay";
+   }
+}
+
