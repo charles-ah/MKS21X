@@ -198,7 +198,7 @@ public class WordSearch{
 		    {
 			if (data[i][j] == '-')
 			    {
-				data[i][j] = (char)(Math.random()*26 + 97);
+				data[i][j] = (char)(randgen.nextInt(26) + 97);
 			    }
 		    }
 	    }
