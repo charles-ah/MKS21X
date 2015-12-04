@@ -3,7 +3,7 @@ public class Driver
 
     public static void main(String[]args)
     {
-	if (args.length != 3)
+	if (args.length < 3)
 	    {
 		System.out.println("\n\nFatal: input must have form of:\n\n\t java Driver [row] [col] [seed]\n\n");
 		return;
