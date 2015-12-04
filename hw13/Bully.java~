@@ -1,0 +1,60 @@
+public class Bully extends Actor{
+
+
+    private int Rage;
+
+    public Bully(String name,int str,int agi,int intel,int health)
+    {
+	super(name,str,agi,intel,health);
+	Rage= 0;
+    }
+    
+    public Bully(String name)
+    {
+	this(name,20,5,5,15);
+    }
+
+    public Bully()
+    {
+	this("Biggus Dickus",20,5,5,15);
+    }
+
+    public String attack(Actor other)
+    {
+	other.takeDamage(7);
+	return getName()+" taunts the "+other.getName();
+    }
+
+    public String specialAttack(Actor other)
+    {
+	if (Rage > 10)
+	    {
+		Rage -= 10; 
+		other.takeDamage(8);
+		return getName()+" mocks "+other.getName()+" on social media";
+	    }
+	return "Special Attack failed!";
+    }
+
+    public int getResource()
+    {
+	return Rage;
+    }
+
+    public String getResourceName()
+    {
+	return "Rage";
+    }
+
+    public int takeDamage(int damage)
+    {
+
+	if (Rage < 100)
+	    {
+		Rage += 5;
+	    }
+
+	return 	super.takeDamage(damage);
+    }
+
+}

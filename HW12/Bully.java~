@@ -1,0 +1,23 @@
+public class Bully extends Actor{
+
+
+    private int Reputation;
+
+    public Bully(String name,int str,int agi.int intel,int health)
+    {
+	super(name,str,agi,intel,health);
+	Reputation = 10;
+    }
+    
+    public Bully(String name)
+    {
+	this(name,20,5,5,15);
+    }
+
+    public Bully()
+    {
+	this("Biggus Dickus",
+    }
+    
+
+}
