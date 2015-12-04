@@ -1,0 +1,1 @@
+alias shan2='echo "shut up shan fast please yeah ah"'
