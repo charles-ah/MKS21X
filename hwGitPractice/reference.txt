@@ -3,3 +3,15 @@ add - moves file to staging area
 
 
 Use "git checkout SHA" instead of "git reset HEAD"
+
+Git workflow:
+
+-first make sure that the directory you are working in is being tracked by git. If not use <git init>.
+
+-whenever you modify a file add it to the staging area using <git add>.
+
+-next after adding it once or multiple times, commit it using <git commit -m "put stuff here">.
+
+-now for the last part, you need internet connection to push the changes you made onto your github repo using <git push url>.
+
+-you can use <git clone url> to copy over a repo into a local directory.
