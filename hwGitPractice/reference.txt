@@ -1,6 +1,8 @@
 clone - clones the repo to computer
 add - moves file to staging area
-
+checkout - after commiting/pushing a file you can go back to a previous version
+commit - commits a file
+push - pushes the commits to github
 
 Use "git checkout SHA" instead of "git reset HEAD"
 
