@@ -1,0 +1,139 @@
+public class SuperArray{
+
+    private int[] data;
+    private int size;
+
+    public SuperArray(int initialCapacity)
+    {
+	
+        data = new int[1];
+        size = 0;
+    }
+
+	public int size(){return size;}
+
+    public boolean add(int n)
+    {
+        int i = 0;
+        boolean placed = false;
+        while (i < size)
+	    {
+                if (data[i] == 0 && !placed)
+		    {
+                        data[i] = n;
+                        size++;
+			placed = true;
+		    }
+                i++;
+	    }
+
+        if (!placed)
+	    {
+                grow();
+
+                add(n);
+	    }
+
+	return placed;
+    }
+
+    private void grow()
+    {
+        int[] newData = new int[data.length*2];
+        for (int i = 0; i< data.length;i++)
+	    {
+		newData[i]=data[i];
+	    }
+	int newLength=newData.length;
+	data = new int[newLength];
+	for (int i = 0; i< newLength/2-1;i++)
+            {
+                data[i]=newData[i];
+            }
+	size++;
+    }
+
+    public String toString()
+    {
+	String str = "[";
+	int i = 0;
+	while (i < data.length - 1)
+	    {
+		str += data[i] + ",";
+		i++;
+	    }
+	return str + data[data.length-1] + "]";
+	
+    }
+
+    public int get(int index)
+    {
+	return data[index];
+    }
+
+    public void clear()
+    {
+	size = 0;
+    }
+
+    public boolean isEmpty()
+    {
+	return size == 0;
+    }
+
+    public int set (int index, int value)
+    {
+	int old = data[index];
+	data[index] = value;
+	return old;
+    }
+
+    public void add(int index, int value)
+    {	
+	if (index < 0){
+	    throw new IndexOutOfBoundsException();
+	}
+
+	int i = index;
+	while (i < data.length)
+	    {
+		if (i+1 >= data.length)
+		    {
+			grow();
+		    }
+		else
+		    {
+			data[i+1] = data[i];
+		    }
+		i++;
+	    }
+	data[index] = value;
+    }
+
+    public void remove(int index)
+    {
+	if (index < 0){
+	    throw new IndexOutOfBoundsException();
+	}
+	int i = index;
+        while (i < data.length)
+            {
+		data[i-1] = data[i];
+
+		i++;
+            }
+
+    }
+
+    public int[] toArray()
+    {
+	int[] array = new int[size];
+	
+	for (int i = 0; i< size;i++)
+	    {
+		array[i] = data[i];
+	    }
+
+	return array;
+    }
+}

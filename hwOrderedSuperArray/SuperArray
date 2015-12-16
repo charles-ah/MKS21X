@@ -1,0 +1,51 @@
+public class SuperArray{
+
+private int[] data;
+private int size;
+
+public SuperArray()
+{
+	int[] superArray = new int[0];
+	size = 0;
+]
+
+public int size(){return size;}
+
+public void add(int n)
+{
+	int i = 0;
+	boolean placed = false;
+	while (i < size)
+	{
+		if (this[i] == null && !placed)
+		{
+			this[i] = n;
+			size++
+			placed = true;
+		}
+		i++;
+	} 
+
+	if (!placed)
+	{
+		grow();
+		this = new SuperArray[size++];
+		for (int i = 0;	i< size;i++)
+		{
+        	    data[i]=this[i];
+        	}
+
+		add(n);
+	}
+} 
+
+private void grow()
+{
+	data = new int[size];
+	for (int i = 0; i< size;i++)
+	{   
+	    data[i]=this[i]; 
+	}
+}
+
+}
