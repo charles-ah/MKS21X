@@ -3,13 +3,13 @@ import javax.swing.*;
 import java.awt.*;//NEW STUFF!
 import java.awt.event.*;
 
-public class Window3 extends JFrame implements ActionListener{
+public class TempConversionWindow extends JFrame implements ActionListener{
     private Container pane;
     private JLabel j;
     private JTextField t;
 
-    public Window3() {
-	this.setTitle("My first GUI");
+    public TempConversionWindow() {
+	this.setTitle("Temperature Converter");
 	this.setSize(600,400);
 	this.setLocation(100,100);
 	this.setDefaultCloseOperation(
@@ -18,12 +18,12 @@ public class Window3 extends JFrame implements ActionListener{
 	pane = this.getContentPane();
 	pane.setLayout(new BoxLayout(pane, BoxLayout.Y_AXIS));
 
-	JButton b = new JButton("ByteMe");
-	b.addActionListener(this);
-	b.setActionCommand("Byte");
-	JButton b2 = new JButton("No...");
-	b2.addActionListener(this);
-	b2.setActionCommand("NotByte");
+	JButton CtoF = new JButton("CtoF");
+	CtoF.addActionListener(this);
+	CtoF.setActionCommand("CtoF");
+	JButton FtoC = new JButton("FtoC");
+	FtoC.addActionListener(this);
+	FtoC.setActionCommand("FtoC");
 
 
 	t = new JTextField(10);
@@ -32,20 +32,21 @@ public class Window3 extends JFrame implements ActionListener{
 	j = new JLabel("Meaning of life is... ");
 	pane.add(c);
 	pane.add(t);
-	pane.add(b);
-	pane.add(b2);
+	pane.add(CtoF);
+	pane.add(FtoC);
 	pane.add(j);
     }
 
     public void actionPerformed(ActionEvent e){
 	String event = e.getActionCommand();
-	if(event.equals("Byte")){
-	    String s = t.getText();
-	    s += "-0101000";
+	String s = t.getText(); 
+	if(event.equals("CtoF")){
+	    s += (String) CtoF(Integer.parseInt(s));
 	    j.setText(s);
 	}
-	if(event.equals("NotByte")){
-	    j.setText("Fish");
+	if(event.equals("FtoC")){
+	    s += (String) FtoC(Integer.parseInt(s));
+	    j.setText(s);
     
 	}
  
