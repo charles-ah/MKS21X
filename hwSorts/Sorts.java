@@ -28,42 +28,19 @@ public class Sorts
 	System.out.println( "["+strArray+data[data.length-1]+"]");
     }
     
-    public static void insertion(int data[])
-    {
-	boolean sorted = false;
-	if (data.length <= 1)
-	    {
-		sorted = true;
-	    }
-
-	while (!sorted)
-	    {
-		for (int j = 0;j<data.length-1;j++)
-		    {
-			if (data[j] > data[j+1])
-			    {
-				int old = data[j];
-				int newV = data[j+1];
-				data[j] = newV;
-				data[j+1] = old;
-			    }
-		    }
-		for (int j = 0;j<data.length-1;j++)
-                    {
-			if (data[j] > data[j+1])
-			    {
-				sorted = false;
-				j = data.length;
-			    }
-			else
-			    {
-				sorted = true;
-			    }
-                    }
-            }
+    public static void insertionSort(int[] data) {                                                                                                                                                         
+        for (int i = 0; i < data.length; i++) {                                                                                                                                                            
+            for (int j = 0; j < data.length - 1; j++) {                                                                                                                                                    
+                if(data[j] >= data[j + 1]) {                                                                                                                                                               
+                    int temp = data[j];                                                                                                                                                                       
+                    data[j] = data[j + 1];                                                                                                                                                                 
+                    data[j + 1] = temp;                                                                                                                                                                       
+                }                                                                                                                                                                                          
+            }                                                                                                                                                                                              
+        }                                                                                                                                                                                                  
     }
-    
-    public static void selection(int nums[])
+
+    public static void selectionSort(int nums[])
     {
 	int count = 0;
 	int temp;
@@ -71,13 +48,28 @@ public class Sorts
 	    {
 		int x = min(Arrays.copyOfRange(nums,count,nums.length));
 		int index = count+indexOf(Arrays.copyOfRange(nums,count,nums.length),x);
-		//		printArray(Arrays.copyOfRange(nums,count,nums.length-1));
-		//System.out.println(x);
-		//System.out.println(index);
+		
 		temp = nums[count];
 		nums[count] = x;
 		nums[index] = temp;
 		count++;
+	    }
+    }
+
+    public static void bubble(int nums[])
+    {
+	for(int i = 0;i<nums.length-1;i++)
+	    {
+		if(nums[i]<nums[i+1])
+		    {
+			int temp = nums[i];
+			nums[i] = nums[i+1];
+			nums[i+1] = temp;
+		    }
+	    }
+	for(int i = 0;i<nums.length;i++)
+	    {
+		
 	    }
     }
     
@@ -96,17 +88,26 @@ public class Sorts
 
     public static void main(String[] args)
     {
-	int[] test1 = new int[] {1,9,4,6,8,0};
+	int[] test1 = new int[] {87,65,51,80,6,74,2,64,15,78,20,37,8,61,95,45,92,9,17,15,61,93,68,81,76,86,34,84,93,16,77,27,59,77,83,34,77,1,65,11,1,78,44,94,24,6,91,71,14,74,26,44,52,12,26,75,11,72,75,49,89,4,24,83,71,20,13,63,46,73,97,85,67,69,0,83,53,50,77,44,86,40,51,49,53,99,16,19,6,87,44,32,95,45,78,41,39,97,5,35}	/*
+	for(int i = 0;i <100;i++)
+	    {
+		test1[i] = (int)(100*Math.random());
+	    }
+	*/
+
 	printArray(test1);
 	insertion(test1);
 	printArray(test1);
+	
 
-	test1 = new int[]  {1,9,4,6,8,0};  
+//	test1 = new int[]  {1,9,4,6,8,0};  
+	/*
 	printArray(test1);
 	selection(test1);
 	printArray(test1);
+	*/
 
-	                                                                                                                                                                                                    
+	/*
         int[] test2 = new int[] {1,9,4,7,4,0};                                                                                                                                                              
         printArray(test2);                                                                                                                                                                                  
         insertion(test2);                                                                                                                                                                                   
@@ -115,6 +116,7 @@ public class Sorts
         test2 = new int[]  {1,9,4,7,4,0};                                                                                                                                                                   
         printArray(test2);                                                                                                                                                                                  
         selection(test2);                                                                                                                                                                                   
-        printArray(test2); 
+        printArray(test2);
+	*/
     }
 }
