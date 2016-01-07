@@ -86,38 +86,18 @@ public class Sorts
     }
 
 
-    public static void main(String[] args)
+    public static void fillRandom(int[] nums)
     {
-	int[] test1 = new int[] {87,65,51,80,6,74,2,64,15,78,20,37,8,61,95,45,92,9,17,15,61,93,68,81,76,86,34,84,93,16,77,27,59,77,83,34,77,1,65,11,1,78,44,94,24,6,91,71,14,74,26,44,52,12,26,75,11,72,75,49,89,4,24,83,71,20,13,63,46,73,97,85,67,69,0,83,53,50,77,44,86,40,51,49,53,99,16,19,6,87,44,32,95,45,78,41,39,97,5,35};
-	/*
-	for(int i = 0;i <100;i++)
+	for(int i =0;i<nums.length;i++)
 	    {
-		test1[i] = (int)(100*Math.random());
+		nums[i]=(int)(100*Math.random());
 	    }
-	*/
+    }
 
-	printArray(test1);
-	bubbleSort(test1);
-	printArray(test1);
-	
-
-//	test1 = new int[]  {1,9,4,6,8,0};  
-	/*
-	printArray(test1);
-	selection(test1);
-	printArray(test1);
-	*/
-
-	/*
-        int[] test2 = new int[] {1,9,4,7,4,0};                                                                                                                                                              
-        printArray(test2);                                                                                                                                                                                  
-        insertion(test2);                                                                                                                                                                                   
-        printArray(test2);                                                                                                                                                                                  
-                                                                                                                                                                                                            
-        test2 = new int[]  {1,9,4,7,4,0};                                                                                                                                                                   
-        printArray(test2);                                                                                                                                                                                  
-        selection(test2);                                                                                                                                                                                   
-        printArray(test2);
-	*/
+    public static void swap(int[]nums,int pos1,int pos2)
+    {
+	int temp = nums[pos1];
+	nums[pos1]=nums[pos2];
+	nums[pos2]=temp;
     }
 }
