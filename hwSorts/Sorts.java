@@ -58,17 +58,7 @@ public class Sorts
 
     public static void bubbleSort(int nums[])
     {
-	/*
-	for(int i = 0;i<nums.length-1;i++)
-	    {
-		if(nums[i]<nums[i+1])
-		    {
-			int temp = nums[i];
-			nums[i] = nums[i+1];
-			nums[i+1] = temp;
-		    }
-	    }
-	*/
+
 	for(int i = 0;i<nums.length-1;i++)                                                                                                                                                                            {
 	    for(int j = 0;j<nums.length-i-1;j++)
 		{
@@ -80,21 +70,7 @@ public class Sorts
                     }                                                                                                                                                                                      
             } 
 	}
-	/*
-	for(int i = 0;i<nums.length;i++)
-	    {
-		for(int j = 0;j < i;j++)
-		    {
-			if (nums[nums.length-1-j] < nums[nums.length-j-2])
-			    {
-				int temp = nums[nums.length-j-1];
-				nums[nums.length-j-1]=nums[nums.length-j-2];
-				nums[nums.length-j-2]=temp;
-			    }
-		    
-		    }
-	    }
-	*/
+
     }
     
     public static int min(int nums[])
